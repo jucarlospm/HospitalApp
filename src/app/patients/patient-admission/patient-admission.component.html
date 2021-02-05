@@ -1,0 +1,41 @@
+<h2>Ingreso paciente</h2>
+
+<div class="row">
+  <div class="col">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="patient.name">
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label for="identification_number" class="form-label">Numero de identificacion</label>
+      <input type="text" class="form-control" [(ngModel)]="patient.identification_number">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="mb-3">
+      <label for="adress" class="form-label">Direccion</label>
+      <input type="text" class="form-control" [(ngModel)]="patient.adress">
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label for="reason_admission" class="form-label">Razon de ingreso</label>
+      <input type="text" class="form-control" [(ngModel)]="patient.reason_admission">
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label for="reason_admission" class="form-label">Grupo</label>
+      <select class="form-select" [(ngModel)]="patient.zone">>
+        <option *ngFor="let zone of zones" value="{{zone.id}}">{{zone.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button (click)="this.newPatient()" class="btn btn-primary">Ingresar</button>
+</div> 

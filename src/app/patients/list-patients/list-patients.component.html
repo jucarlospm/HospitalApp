@@ -1,0 +1,26 @@
+<h2>
+  Listado pacientes
+</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Numero de identificacion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Razon de ingreso</th>
+      <th scope="col">Grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="! patients.length">
+      <th class="text-center" colspan="5">No hay pacientes en el hospital</th>
+    </tr>
+    <tr *ngFor="let patient of patients">
+      <th scope="col">{{patient.identification_number}}</th>
+      <th>{{patient.name}}</th>
+      <th>{{patient.adress}}</th>
+      <th>{{patient.reason_admission}}</th>
+      <th>{{patient.zone}}</th>
+    </tr>
+  </tbody>
+</table>
