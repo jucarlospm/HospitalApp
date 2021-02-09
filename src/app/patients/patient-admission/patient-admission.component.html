@@ -1,5 +1,10 @@
 <h2>Ingreso paciente</h2>
-
+<div *ngIf="dangerAlert" class="alert alert-danger" role="alert">
+  {{message}}
+</div>
+<div *ngIf="!dangerAlert && message" class="alert alert-success" role="alert">
+  {{message}}
+</div>
 <div class="row">
   <div class="col">
     <div class="mb-3">
@@ -31,7 +36,7 @@
     <div class="mb-3">
       <label for="reason_admission" class="form-label">Grupo</label>
       <select class="form-select" [(ngModel)]="patient.zone">>
-        <option *ngFor="let zone of zones" value="{{zone.id}}">{{zone.name}}</option>
+        <option *ngFor="let zone of zones" value="{{zone.name}}">{{zone.name}}</option>
       </select>
     </div>
   </div>

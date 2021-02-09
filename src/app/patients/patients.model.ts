@@ -1,13 +1,12 @@
 export interface Patient {
-  id: number;
+  id: string;
   name: string;
   identification_number: string;
   adress: string;
   reason_admission: string;
-  zone: number;
+  zone: string;
 }
 
 export interface Zone {
-  id: number;
   name: string;
 }

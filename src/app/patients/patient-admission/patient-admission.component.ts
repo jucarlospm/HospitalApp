@@ -11,6 +11,8 @@ export class PatientAdmissionComponent implements OnInit {
 
   patient: Patient;
   zones: Zone[];
+  dangerAlert;
+  message = '';
 
   constructor(private patientsService: PatientsService) { }
 
@@ -20,7 +22,12 @@ export class PatientAdmissionComponent implements OnInit {
   }
 
   newPatient(): void {
-    this.patientsService.addPatient(this.patient);
-    this.patient = this.patientsService.newPatient();
+    const response = this.patientsService.addPatient(this.patient);
+    this.message = response.message;
+    this.dangerAlert = !response.status;
+
+    if(response.status === true) {
+      this.patient = this.patientsService.newPatient();
+    }
   }
 }

@@ -9,6 +9,8 @@
       <th scope="col">Direccion</th>
       <th scope="col">Razon de ingreso</th>
       <th scope="col">Grupo</th>
+      <th scope="col">Acciones</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -21,6 +23,9 @@
       <th>{{patient.adress}}</th>
       <th>{{patient.reason_admission}}</th>
       <th>{{patient.zone}}</th>
+      <th>
+        <button (click)="this.removePatient(patient.id)" class="btn btn-warning">Dar de alta</button>
+      </th>
     </tr>
   </tbody>
 </table>
